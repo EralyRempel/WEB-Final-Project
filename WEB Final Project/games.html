@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Internet Cafe: gaming stations, live game deals and online booking.">
+    <title>Game Deals | Internet Cafe</title>
+    <link rel="icon" href="images/emblem.jpg" type="image/jpeg">
+    <script>try { if (localStorage.getItem('cafe_theme') === 'light') document.documentElement.classList.add('day-theme'); } catch (e) {}</script>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js"></script>
+    <script src="js/utils.js" defer></script>
+    <script src="js/auth.js" defer></script>
+    <script src="js/script.js" defer></script>
+    <script src="js/games.js" defer></script>
+</head>
+<body>
+
+    <header id="main-header">
+        <div class="header-inner">
+            <a class="brand" href="index.html"><img src="images/emblem.jpg" alt=""><h1>Internet Cafe</h1></a>
+            <button type="button" class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">&#9776;</button>
+            <nav class="nav-menu" id="site-nav" aria-label="Main navigation">
+                <a href="index.html">Home</a>
+                <a href="services.html">Services</a>
+                <a href="games.html" aria-current="page">Game Deals</a>
+                <a href="team.html">About Team</a>
+                <a href="contact.html">Contact Us</a>
+            </nav>
+            <div class="header-actions">
+                <button type="button" id="theme-switch" class="theme-switch" role="switch" aria-checked="true"><span>Dark mode</span><span class="track" aria-hidden="true"><span class="knob"></span></span></button>
+                <span id="auth-links"><a class="btn btn-small btn-outline" href="login.html">Log in</a><a class="btn btn-small" href="signup.html">Sign up</a></span>
+                <button type="button" class="btn btn-small header-subscribe" data-open-subscription>Subscribe</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+
+        <section class="card wide" id="deals-app" aria-labelledby="deals-heading">
+            <h2 id="deals-heading">Game Deals</h2>
+            <p>Live discounts from online game stores. Find a cheap game, save it to your list, and try it in our cafe before you buy.</p>
+
+            <form id="deal-form" class="deals-toolbar" novalidate>
+                <div class="field">
+                    <label for="deal-title">Game title</label>
+                    <input type="search" id="deal-title" placeholder="For example: Cyberpunk, Witcher, Dota…" autocomplete="off">
+                </div>
+                <div class="field">
+                    <label for="deal-store">Store</label>
+                    <select id="deal-store"><option value="">All stores</option></select>
+                </div>
+                <div class="field">
+                    <label for="deal-price">Maximum price</label>
+                    <select id="deal-price">
+                        <option value="">Any price</option>
+                        <option value="5">Up to $5</option>
+                        <option value="10">Up to $10</option>
+                        <option value="20">Up to $20</option>
+                        <option value="30">Up to $30</option>
+                    </select>
+                </div>
+                <div class="field">
+                    <label for="deal-sort">Sort by</label>
+                    <select id="deal-sort">
+                        <option value="Deal Rating">Best deals</option>
+                        <option value="Savings">Biggest discount</option>
+                        <option value="Price">Lowest price</option>
+                        <option value="Metacritic">Metacritic score</option>
+                        <option value="Title">Title A-Z</option>
+                    </select>
+                </div>
+                <div class="full">
+                    <label class="check"><input type="checkbox" id="deal-rated"> Only games with 80%+ Steam reviews</label>
+                    <button type="submit" class="btn btn-small">Search</button>
+                    <button type="button" id="deal-reset" class="btn btn-small btn-outline">Reset filters</button>
+                </div>
+            </form>
+
+            <div class="tabs" role="group" aria-label="Which deals to show">
+                <button type="button" id="tab-live" class="tab-btn active" aria-pressed="true">Live deals</button>
+                <button type="button" id="tab-saved" class="tab-btn" aria-pressed="false">Saved (<span id="saved-count">0</span>)</button>
+            </div>
+
+            <p id="deal-summary" class="small-note" aria-live="polite"></p>
+            <div id="deal-grid" class="deal-grid" aria-busy="true"></div>
+            <button type="button" id="deal-more" class="btn btn-outline" hidden>Load more deals</button>
+
+            <p class="small-note api-credit">Deal data: <a href="https://apidocs.cheapshark.com/" target="_blank" rel="noopener noreferrer">CheapShark API</a>. Prices change quickly; check the final price in the store.</p>
+        </section>
+
+    </main>
+
+    <div class="modal-backdrop" id="subscription-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <div class="modal-content">
+        <button type="button" class="close-modal" id="close-modal" aria-label="Close subscription form">&times;</button>
+        <h2 id="modal-title">Join our cafe updates</h2>
+        <p>Get news about gaming events, tournaments and special offers.</p>
+        <p class="popup-more-info">For more information, click <a href="https://youtu.be/dQw4w9WgXcQ?si=LxP4lefhj2hTHnbE" target="_blank" rel="noopener noreferrer">Here</a>.</p>
+        <form id="subscription-form" novalidate>
+          <div class="field">
+            <label for="subscription-email">Email address</label>
+            <input id="subscription-email" name="subscription-email" type="text" inputmode="email" placeholder="you@example.com" autocomplete="email">
+          </div>
+          <button class="btn" type="submit">Subscribe</button>
+          <p id="subscription-feedback" class="form-message" aria-live="polite"></p>
+        </form>
+      </div>
+    </div>
+
+    <footer>
+        <p>Created by: Eraly</p>
+        <p>Current date and time: <span class="footer-date-time" aria-live="off">Loading…</span></p>
+    </footer>
+
+</body>
+</html>

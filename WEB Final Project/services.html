@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Internet Cafe: gaming stations, live game deals and online booking.">
+    <title>Services | Internet Cafe</title>
+    <link rel="icon" href="images/emblem.jpg" type="image/jpeg">
+    <!-- apply the saved light/dark mode before the page is painted (no flash) -->
+    <script>try { if (localStorage.getItem('cafe_theme') === 'light') document.documentElement.classList.add('day-theme'); } catch (e) {}</script>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js"></script>
+    <script src="js/utils.js" defer></script>
+    <script src="js/auth.js" defer></script>
+    <script src="js/script.js" defer></script>
+</head>
+<body>
+
+    <header id="main-header">
+        <div class="header-inner">
+            <a class="brand" href="index.html"><img src="images/emblem.jpg" alt=""><h1>Internet Cafe</h1></a>
+            <button type="button" class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">&#9776;</button>
+            <nav class="nav-menu" id="site-nav" aria-label="Main navigation">
+                <a href="index.html">Home</a>
+                <a href="services.html" aria-current="page">Services</a>
+                <a href="games.html">Game Deals</a>
+                <a href="team.html">About Team</a>
+                <a href="contact.html">Contact Us</a>
+            </nav>
+            <div class="header-actions">
+                <button type="button" id="theme-switch" class="theme-switch" role="switch" aria-checked="true"><span>Dark mode</span><span class="track" aria-hidden="true"><span class="knob"></span></span></button>
+                <span id="auth-links"><a class="btn btn-small btn-outline" href="login.html">Log in</a><a class="btn btn-small" href="signup.html">Sign up</a></span>
+                <button type="button" class="btn btn-small header-subscribe" data-open-subscription>Subscribe</button>
+            </div>
+        </div>
+    </header>
+
+
+    <main>
+
+        <section class="card">
+            <h2>Our Services</h2>
+            <ol>
+                <li>Standard</li>
+                <li>Pro Gaming Stations</li>
+                <li>Private Tournament Rooms</li>
+            </ol>
+            <img src="images/Gaming.jpg" alt="Player enjoying a gaming setup" class="feature-img">
+        </section>
+
+    <section class="card" aria-labelledby="copy-heading">
+            <h2 id="copy-heading">Handy info</h2>
+            <p class="small-note">Click the copy button next to any item to copy it.</p>
+            <div class="snippet-list">
+                <div class="snippet">
+                    <span class="snippet-label">Wi-Fi network</span>
+                    <code class="snippet-text">InternetCafe_5G</code>
+                    <span class="copy-wrap"><button type="button" class="copy-btn" aria-label="Copy Wi-Fi network"><svg class="icon-copy" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg><svg class="icon-check" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></button><span class="copy-tooltip" role="status">Copied to clipboard!</span></span>
+                </div>
+                <div class="snippet">
+                    <span class="snippet-label">Wi-Fi password</span>
+                    <code class="snippet-text">Gamer#2026</code>
+                    <span class="copy-wrap"><button type="button" class="copy-btn" aria-label="Copy Wi-Fi password"><svg class="icon-copy" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg><svg class="icon-check" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></button><span class="copy-tooltip" role="status">Copied to clipboard!</span></span>
+                </div>
+                <div class="snippet">
+                    <span class="snippet-label">Promo code</span>
+                    <code class="snippet-text">GAMER10</code>
+                    <span class="copy-wrap"><button type="button" class="copy-btn" aria-label="Copy promo code"><svg class="icon-copy" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg><svg class="icon-check" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></button><span class="copy-tooltip" role="status">Copied to clipboard!</span></span>
+                </div>
+                <div class="snippet">
+                    <span class="snippet-label">Booking email</span>
+                    <code class="snippet-text">booking@internetcafe.kz</code>
+                    <span class="copy-wrap"><button type="button" class="copy-btn" aria-label="Copy booking email"><svg class="icon-copy" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg><svg class="icon-check" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></button><span class="copy-tooltip" role="status">Copied to clipboard!</span></span>
+                </div>
+            </div>
+        </section>
+
+        <section class="card" id="pricing">
+            <h2>Pricing Tiers</h2>
+            <div class="table-scroll">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Zone Type</th>
+                        <th>Hardware Specs</th>
+                        <th>Hourly Rate</th>
+                        <th><span class="sr-only">Action</span></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Standard Zone</td>
+                        <td>Core i5 / RTX 3060 / 16GB RAM</td>
+                        <td>$3.00 / hr</td>
+                        <td><button type="button" class="btn btn-small select-zone" data-zone="Standard Zone">Select</button></td>
+                    </tr>
+                    <tr>
+                        <td>VIP Gaming Zone</td>
+                        <td>Core i9 / RTX 4080 / 32GB RAM</td>
+                        <td>$6.00 / hr</td>
+                        <td><button type="button" class="btn btn-small select-zone" data-zone="VIP Gaming Zone">Select</button></td>
+                    </tr>
+                    <tr>
+                        <td>Pro Tournament Zone</td>
+                        <td>Core i9 / RTX 4090 / 64GB RAM</td>
+                        <td>$10.00 / hr</td>
+                        <td><button type="button" class="btn btn-small select-zone" data-zone="Pro Tournament Zone">Select</button></td>
+                    </tr>
+                </tbody>
+            </table>
+            </div>
+        </section>
+
+        <!-- Task 1: Real-time search and live filter -->
+        <section class="card" id="games" aria-labelledby="games-heading">
+            <h2 id="games-heading">Game Library</h2>
+            <p class="small-note">Type to filter by game, genre or zone (for example “shooter”, “vip” or “dota”).</p>
+            <p class="small-note">Want to buy a game for home? <a href="games.html">See live game deals</a>.</p>
+            <label for="game-filter" class="sr-only">Filter games</label>
+            <input type="search" id="game-filter" class="page-search" placeholder="Filter games…" autocomplete="off">
+            <p id="game-count" class="small-note" aria-live="polite"></p>
+            <ul id="game-list" class="game-list"></ul>
+            <p id="no-games" class="form-message error" hidden>No games match your search.</p>
+        </section>
+    
+    </main>
+
+    <div class="modal-backdrop" id="subscription-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <div class="modal-content">
+        <button type="button" class="close-modal" id="close-modal" aria-label="Close subscription form">&times;</button>
+        <h2 id="modal-title">Join our cafe updates</h2>
+        <p>Get news about gaming events, tournaments and special offers.</p>
+        <p class="popup-more-info">For more information, click <a href="https://youtu.be/dQw4w9WgXcQ?si=LxP4lefhj2hTHnbE" target="_blank" rel="noopener noreferrer">Here</a>.</p>
+        <form id="subscription-form" novalidate>
+          <div class="field">
+            <label for="subscription-email">Email address</label>
+            <input id="subscription-email" name="subscription-email" type="text" inputmode="email" placeholder="you@example.com" autocomplete="email">
+          </div>
+          <button class="btn" type="submit">Subscribe</button>
+          <p id="subscription-feedback" class="form-message" aria-live="polite"></p>
+        </form>
+      </div>
+    </div>
+
+    <footer>
+        <p>Created by: Eraly</p>
+        <p>Current date and time: <span class="footer-date-time" aria-live="off">Loading…</span></p>
+    </footer>
+
+</body>
+</html>

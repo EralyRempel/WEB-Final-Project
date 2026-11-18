@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Internet Cafe: gaming stations, live game deals and online booking.">
+    <title>Contact | Internet Cafe</title>
+    <link rel="icon" href="images/emblem.jpg" type="image/jpeg">
+    <script>try { if (localStorage.getItem('cafe_theme') === 'light') document.documentElement.classList.add('day-theme'); } catch (e) {}</script>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js"></script>
+    <script src="js/utils.js" defer></script>
+    <script src="js/auth.js" defer></script>
+    <script src="js/script.js" defer></script>
+</head>
+<body>
+
+    <header id="main-header">
+        <div class="header-inner">
+            <a class="brand" href="index.html"><img src="images/emblem.jpg" alt=""><h1>Internet Cafe</h1></a>
+            <button type="button" class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">&#9776;</button>
+            <nav class="nav-menu" id="site-nav" aria-label="Main navigation">
+                <a href="index.html">Home</a>
+                <a href="services.html">Services</a>
+                <a href="games.html">Game Deals</a>
+                <a href="team.html">About Team</a>
+                <a href="contact.html" aria-current="page">Contact Us</a>
+            </nav>
+            <div class="header-actions">
+                <button type="button" id="theme-switch" class="theme-switch" role="switch" aria-checked="true"><span>Dark mode</span><span class="track" aria-hidden="true"><span class="knob"></span></span></button>
+                <span id="auth-links"><a class="btn btn-small btn-outline" href="login.html">Log in</a><a class="btn btn-small" href="signup.html">Sign up</a></span>
+                <button type="button" class="btn btn-small header-subscribe" data-open-subscription>Subscribe</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+
+        <section class="card">
+            <h2>Book a Station / Get in Touch</h2>
+            <p class="small-note">Fill in the form and we will keep your request. If you are logged in, your details are filled in for you.</p>
+            <form id="contact-form" novalidate>
+                <div class="field">
+                    <label for="name">Full name</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your full name" autocomplete="name">
+                </div>
+                <div class="field">
+                    <label for="email">Email address</label>
+                    <input type="text" inputmode="email" id="email" name="email" placeholder="name@example.com" autocomplete="email">
+                </div>
+                <div class="field">
+                    <label for="phone">Phone number</label>
+                    <input type="text" inputmode="tel" id="phone" name="phone" placeholder="+7 701 123 45 67" autocomplete="tel">
+                </div>
+                <div class="field">
+                    <label for="zone-type">Zone type</label>
+                    <select id="zone-type" name="zone-type">
+                        <option value="" selected>Select a zone</option>
+                        <option value="standard">Standard Zone ($3.00/hr)</option>
+                        <option value="vip">VIP Gaming Zone ($6.00/hr)</option>
+                        <option value="pro">Pro Tournament Suite ($10.00/hr)</option>
+                    </select>
+                </div>
+                <div class="field">
+                    <label for="message">Message or special requests (optional)</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Let us know your booking requests"></textarea>
+                </div>
+                <button type="submit" class="btn">Submit Booking Request</button>
+                <div id="form-message" class="form-message" role="status" aria-live="polite" tabindex="-1"></div>
+            </form>
+        </section>
+
+    </main>
+
+    <div class="modal-backdrop" id="subscription-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <div class="modal-content">
+        <button type="button" class="close-modal" id="close-modal" aria-label="Close subscription form">&times;</button>
+        <h2 id="modal-title">Join our cafe updates</h2>
+        <p>Get news about gaming events, tournaments and special offers.</p>
+        <p class="popup-more-info">For more information, click <a href="https://youtu.be/dQw4w9WgXcQ?si=LxP4lefhj2hTHnbE" target="_blank" rel="noopener noreferrer">Here</a>.</p>
+        <form id="subscription-form" novalidate>
+          <div class="field">
+            <label for="subscription-email">Email address</label>
+            <input id="subscription-email" name="subscription-email" type="text" inputmode="email" placeholder="you@example.com" autocomplete="email">
+          </div>
+          <button class="btn" type="submit">Subscribe</button>
+          <p id="subscription-feedback" class="form-message" aria-live="polite"></p>
+        </form>
+      </div>
+    </div>
+
+    <footer>
+        <p>Created by: Eraly</p>
+        <p>Current date and time: <span class="footer-date-time" aria-live="off">Loading…</span></p>
+    </footer>
+
+</body>
+</html>
